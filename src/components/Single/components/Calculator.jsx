@@ -21,6 +21,7 @@ const Calculator = ({ network }) => {
   const [tableContent, setTableContent] = useState("");
   const [isCopied, setIsCopied] = useState(false);
   const [selectedNetwork, setSelectedNetwork] = useState(network);
+  const [isAvailable, setIsAvailable] = useState(false);
 
   const handleNetworkChange = (network) => {
     setSelectedNetwork(network);
@@ -29,10 +30,13 @@ const Calculator = ({ network }) => {
   const prices = useMemo(() => {
     switch (selectedNetwork) {
       case "MTN":
+        setIsAvailable(true);
         return mtnPrices;
       case "AirtelTigo":
+        setIsAvailable(false);
         return atPrices;
       case "Vodafone":
+        setIsAvailable(false);
         return vodaPrices;
       default:
         return {};
@@ -99,10 +103,11 @@ const Calculator = ({ network }) => {
             handleInputBlur={handleInputBlur}
             inputError={inputError}
             network={selectedNetwork}
+            disable={!isAvailable}
           />
         </div>
         <div className="packs-container">
-          {prices === atPrices || prices === vodaPrices ? (
+          {!isAvailable ? (
             <div className="coming-soon">
               <p>Coming soon...</p>
               <p>Stay tuned😎</p>

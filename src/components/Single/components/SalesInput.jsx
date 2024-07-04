@@ -7,6 +7,7 @@ const SalesInput = ({
   handleInputBlur,
   inputError,
   network,
+  disable,
 }) => {
   return (
     <div className="input-sales">
@@ -22,6 +23,7 @@ const SalesInput = ({
           value={inputValue}
           onChange={handleInputChange}
           onBlur={handleInputBlur}
+          disabled={disable}
         />
         <label htmlFor="floatingInput">{`Enter ${network} Packages`}</label>
       </div>
