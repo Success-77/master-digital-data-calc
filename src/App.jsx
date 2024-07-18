@@ -43,11 +43,11 @@ const App = () => {
         {activeTab === "single" && <Calculator network="MTN" />}
         {activeTab === "combine" && (
           <div className="combine-coming-soon">
-            {/* <CalculateAll />} */}
-            <div className="coming-soon">
+            <CalculateAll />
+            {/* <div className="coming-soon">
               <p>Coming soon...</p>
               <p>Stay tuned😎</p>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

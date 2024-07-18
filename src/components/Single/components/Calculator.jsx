@@ -36,7 +36,7 @@ const Calculator = ({ network }) => {
         setIsAvailable(false);
         return atPrices;
       case "Vodafone":
-        setIsAvailable(false);
+        setIsAvailable(true);
         return vodaPrices;
       default:
         return {};

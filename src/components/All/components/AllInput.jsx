@@ -8,6 +8,7 @@ const AllInput = ({
   onBlur,
   errorMessage,
   label,
+  disable,
 }) => {
   const handleInputChange = (event) => {
     onChange(event.target.value);
@@ -28,6 +29,7 @@ const AllInput = ({
           value={value}
           onChange={handleInputChange}
           onBlur={handleInputBlur}
+          disabled={disable}
         />
         <label htmlFor={id}>{label}</label>
       </div>
