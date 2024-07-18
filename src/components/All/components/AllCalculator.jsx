@@ -71,8 +71,7 @@ const AllCalculator = ({ mtnPrices, atPrices, vodaPrices }) => {
     const mtnPriceList = amounts(mtnPrices, mtnValues);
     const atPriceList = amounts(atPrices, atValues);
     const vodaPriceList = amounts(vodaPrices, vodaValues);
-    // const allPrices = [...mtnPriceList, ...atPriceList, ...vodaPriceList];
-    const allPrices = [...mtnPriceList, ...vodaPriceList];
+    const allPrices = [...mtnPriceList, ...atPriceList, ...vodaPriceList];
 
     const plainTextLines = plainTextFormat(packs, allPrices);
     const plainText = plainTextLines.join("\n");
